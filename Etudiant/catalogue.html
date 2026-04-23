@@ -211,6 +211,7 @@
 </head>
 
 <body class="bg-white text-[#0f2027] overflow-x-hidden">
+
     <!-- ===== NAVBAR ===== -->
     <nav
         class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-12 h-[68px] bg-white/90 backdrop-blur-md border-b border-[#d4ecea]">
@@ -323,77 +324,295 @@
         </div>
     </section>
 
-    <!-- ===== HERO ===== -->
-    <section class="relative min-h-screen flex items-center px-12 pt-[120px] pb-20 overflow-hidden">
-        <!-- bg gradient -->
-        <div class="absolute inset-0 pointer-events-none"
-            style="background: radial-gradient(ellipse 60% 60% at 70% 40%, rgba(42,157,143,0.10) 0%, transparent 70%), radial-gradient(ellipse 40% 40% at 20% 80%, rgba(42,157,143,0.07) 0%, transparent 60%);">
+    <!-- ===== CATALOGUE ===== -->
+    <section id="catalogue" class="px-12 py-24 bg-[#fafafa]">
+
+        <!-- Header -->
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <div class="text-[11px] font-semibold tracking-[3px] text-green uppercase mb-2">Catalogue</div>
+                <h2 class="font-playfair text-4xl font-bold leading-tight">Nos formations<br>disponibles</h2>
+            </div>
+            <a href="#"
+                class="btn-outline-nav px-5 py-2 border-[1.5px] border-[#d4ecea] rounded-lg text-sm font-medium text-[#6b7c84] no-underline">Voir
+                tout →</a>
         </div>
 
-        <!-- decorative circles -->
-        <div class="hero-circle-outer"></div>
-        <div class="hero-circle-inner"></div>
+        <!-- Filter bar -->
+        <div class="flex gap-3 items-center mb-10 flex-wrap">
+            <!-- Search -->
+            <div class="relative">
+                <svg class="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#6b7c84]" width="16" height="16"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+                <input type="text" placeholder="Rechercher une formation..."
+                    class="pl-10 pr-4 py-2.5 border-[1.5px] border-[#d4ecea] rounded-xl text-sm font-dm text-[#0f2027] bg-white outline-none focus:border-green w-80 transition-colors" />
+            </div>
+            <button onclick="setFilter(this,'Toutes')"
+                class="filter-chip active-chip px-5 py-2 rounded-full border-[1.5px] border-green bg-green-pale text-green text-sm font-semibold cursor-pointer">Toutes</button>
+            <button onclick="setFilter(this,'Informatique')"
+                class="filter-chip px-5 py-2 rounded-full border-[1.5px] border-[#d4ecea] bg-white text-[#6b7c84] text-sm font-medium cursor-pointer">Informatique</button>
+            <button onclick="setFilter(this,'Design')"
+                class="filter-chip px-5 py-2 rounded-full border-[1.5px] border-[#d4ecea] bg-white text-[#6b7c84] text-sm font-medium cursor-pointer">Design</button>
+            <button onclick="setFilter(this,'Management')"
+                class="filter-chip px-5 py-2 rounded-full border-[1.5px] border-[#d4ecea] bg-white text-[#6b7c84] text-sm font-medium cursor-pointer">Management</button>
+            <button onclick="setFilter(this,'Marketing')"
+                class="filter-chip px-5 py-2 rounded-full border-[1.5px] border-[#d4ecea] bg-white text-[#6b7c84] text-sm font-medium cursor-pointer">Marketing</button>
+        </div>
 
-        <!-- dot grid -->
-        <div class="dot-grid absolute opacity-30 pointer-events-none"
-            style="right:200px; top:140px; width:180px; height:180px;"></div>
+        <!-- Cards grid -->
+        <div class="grid grid-cols-3 gap-6">
 
-        <!-- Content -->
-        <div class="relative max-w-xl animate-fade-up">
-
-            <!-- Badge -->
-            <div
-                class="inline-flex items-center gap-2 px-4 py-1.5 bg-green-pale border border-[#d4ecea] rounded-full text-xs font-semibold text-green-dark mb-6 tracking-wide">
-                <div class="w-1.5 h-1.5 rounded-full bg-green animate-pulse2"></div>
-                Inscriptions ouvertes · Session 2025–2026
+            <!-- Card component macro -->
+            <!-- Card 1 -->
+            <div class="formation-card bg-white rounded-2xl border-[1.5px] border-[#d4ecea] overflow-hidden cursor-pointer animate-fade-up"
+                data-cat="Informatique">
+                <div class="h-2" style="background: linear-gradient(90deg,#2A9D8F,#52b3a7)"></div>
+                <div class="p-6">
+                    <span
+                        class="inline-block px-3 py-1 rounded-full bg-green-pale text-green-dark text-[11px] font-semibold tracking-wide mb-4">Informatique</span>
+                    <h3 class="font-playfair text-xl font-bold text-[#0f2027] mb-2 leading-snug">Développement Web Full
+                        Stack</h3>
+                    <p class="text-sm leading-relaxed text-[#6b7c84] mb-5">Maîtrisez HTML, CSS, PHP et les bases de
+                        données pour créer des applications web complètes.</p>
+                    <div class="flex gap-4 mb-5">
+                        <div class="flex items-center gap-1.5 text-xs text-[#6b7c84]">
+                            <svg class="text-green" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>6 mois
+                        </div>
+                        <div class="flex items-center gap-1.5 text-xs text-[#6b7c84]">
+                            <svg class="text-green" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                            </svg>30 places
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center pt-4 border-t border-[#d4ecea]">
+                        <span class="text-xs font-semibold text-[#e07b00]">⚡ 4 places restantes</span>
+                        <button
+                            class="btn-inscrire flex items-center gap-1.5 px-5 py-2 bg-green text-white rounded-lg text-[13px] font-semibold">
+                            S'inscrire
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
             </div>
 
-            <!-- Heading -->
-            <h1 class="font-playfair text-6xl font-black leading-[1.1] mb-5">
-                Trouvez la formation<br>
-                qui vous <span class="accent-underline">correspond</span>
-            </h1>
-
-            <!-- Sub -->
-            <p class="text-lg leading-relaxed text-[#6b7c84] mb-9 max-w-md">
-                Parcourez notre catalogue de formations et déposez votre demande d'inscription en quelques clics.
-                L'École 221 vous accompagne dans votre parcours académique.
-            </p>
-
-            <!-- Actions -->
-            <div class="flex gap-4 items-center">
-                <a href="#catalogue"
-                    class="btn-hero-main flex items-center gap-2 px-8 py-4 bg-green text-white rounded-xl text-[15px] font-semibold no-underline">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2.5">
-                        <rect x="3" y="3" width="7" height="7" />
-                        <rect x="14" y="3" width="7" height="7" />
-                        <rect x="3" y="14" width="7" height="7" />
-                        <rect x="14" y="14" width="7" height="7" />
-                    </svg>
-                    Explorer le catalogue
-                </a>
-                <a href="#"
-                    class="btn-ghost px-7 py-4 rounded-xl border-[1.5px] border-[#d4ecea] text-[#0f2027] text-[15px] font-medium no-underline">
-                    Mon espace →
-                </a>
-            </div>
-
-            <!-- Stats -->
-            <div class="flex gap-10 mt-14 pt-10 border-t border-[#d4ecea]">
-                <div>
-                    <div class="font-playfair text-4xl font-bold text-green">12</div>
-                    <div class="text-sm text-[#6b7c84] mt-0.5">Formations disponibles</div>
-                </div>
-                <div>
-                    <div class="font-playfair text-4xl font-bold text-green">340</div>
-                    <div class="text-sm text-[#6b7c84] mt-0.5">Étudiants inscrits</div>
-                </div>
-                <div>
-                    <div class="font-playfair text-4xl font-bold text-green">98%</div>
-                    <div class="text-sm text-[#6b7c84] mt-0.5">Taux de satisfaction</div>
+            <!-- Card 2 -->
+            <div class="formation-card bg-white rounded-2xl border-[1.5px] border-[#d4ecea] overflow-hidden cursor-pointer animate-fade-up-1"
+                data-cat="Design">
+                <div class="h-2" style="background: linear-gradient(90deg,#1f7a6e,#2A9D8F)"></div>
+                <div class="p-6">
+                    <span
+                        class="inline-block px-3 py-1 rounded-full bg-green-pale text-green-dark text-[11px] font-semibold tracking-wide mb-4">Design</span>
+                    <h3 class="font-playfair text-xl font-bold text-[#0f2027] mb-2 leading-snug">Design UI/UX &
+                        Prototypage</h3>
+                    <p class="text-sm leading-relaxed text-[#6b7c84] mb-5">Apprenez à concevoir des interfaces
+                        utilisateur intuitives et à créer des prototypes interactifs.</p>
+                    <div class="flex gap-4 mb-5">
+                        <div class="flex items-center gap-1.5 text-xs text-[#6b7c84]">
+                            <svg class="text-green" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>4 mois
+                        </div>
+                        <div class="flex items-center gap-1.5 text-xs text-[#6b7c84]">
+                            <svg class="text-green" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                            </svg>25 places
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center pt-4 border-t border-[#d4ecea]">
+                        <span class="text-xs font-semibold text-green-dark">✓ Places disponibles</span>
+                        <button
+                            class="btn-inscrire flex items-center gap-1.5 px-5 py-2 bg-green text-white rounded-lg text-[13px] font-semibold">
+                            S'inscrire
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
+
+            <!-- Card 3 — déjà inscrit -->
+            <div class="formation-card bg-white rounded-2xl border-[1.5px] border-[#d4ecea] overflow-hidden cursor-pointer animate-fade-up-2"
+                data-cat="Management">
+                <div class="h-2" style="background: linear-gradient(90deg,#3dbdad,#2A9D8F)"></div>
+                <div class="p-6">
+                    <span
+                        class="inline-block px-3 py-1 rounded-full bg-green-pale text-green-dark text-[11px] font-semibold tracking-wide mb-4">Management</span>
+                    <h3 class="font-playfair text-xl font-bold text-[#0f2027] mb-2 leading-snug">Gestion de Projet Agile
+                    </h3>
+                    <p class="text-sm leading-relaxed text-[#6b7c84] mb-5">Découvrez les méthodologies Scrum et Kanban
+                        pour piloter des projets avec efficacité.</p>
+                    <div class="flex gap-4 mb-5">
+                        <div class="flex items-center gap-1.5 text-xs text-[#6b7c84]">
+                            <svg class="text-green" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>3 mois
+                        </div>
+                        <div class="flex items-center gap-1.5 text-xs text-[#6b7c84]">
+                            <svg class="text-green" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                            </svg>20 places
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center pt-4 border-t border-[#d4ecea]">
+                        <span class="text-xs font-semibold text-green-dark">✓ Places disponibles</span>
+                        <button
+                            class="flex items-center gap-1.5 px-5 py-2 bg-[#f0f4f3] text-[#9aada9] rounded-lg text-[13px] font-semibold cursor-not-allowed">
+                            ✓ Demande envoyée
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="formation-card bg-white rounded-2xl border-[1.5px] border-[#d4ecea] overflow-hidden cursor-pointer animate-fade-up"
+                data-cat="Marketing">
+                <div class="h-2" style="background: linear-gradient(90deg,#2A9D8F,#52b3a7)"></div>
+                <div class="p-6">
+                    <span
+                        class="inline-block px-3 py-1 rounded-full bg-green-pale text-green-dark text-[11px] font-semibold tracking-wide mb-4">Marketing</span>
+                    <h3 class="font-playfair text-xl font-bold text-[#0f2027] mb-2 leading-snug">Marketing Digital & SEO
+                    </h3>
+                    <p class="text-sm leading-relaxed text-[#6b7c84] mb-5">Stratégies de communication digitale, réseaux
+                        sociaux et référencement naturel.</p>
+                    <div class="flex gap-4 mb-5">
+                        <div class="flex items-center gap-1.5 text-xs text-[#6b7c84]">
+                            <svg class="text-green" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>5 mois
+                        </div>
+                        <div class="flex items-center gap-1.5 text-xs text-[#6b7c84]">
+                            <svg class="text-green" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                            </svg>35 places
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center pt-4 border-t border-[#d4ecea]">
+                        <span class="text-xs font-semibold text-green-dark">✓ Places disponibles</span>
+                        <button
+                            class="btn-inscrire flex items-center gap-1.5 px-5 py-2 bg-green text-white rounded-lg text-[13px] font-semibold">
+                            S'inscrire
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="formation-card bg-white rounded-2xl border-[1.5px] border-[#d4ecea] overflow-hidden cursor-pointer animate-fade-up-1"
+                data-cat="Informatique">
+                <div class="h-2" style="background: linear-gradient(90deg,#1f7a6e,#2A9D8F)"></div>
+                <div class="p-6">
+                    <span
+                        class="inline-block px-3 py-1 rounded-full bg-green-pale text-green-dark text-[11px] font-semibold tracking-wide mb-4">Informatique</span>
+                    <h3 class="font-playfair text-xl font-bold text-[#0f2027] mb-2 leading-snug">Bases de Données & SQL
+                    </h3>
+                    <p class="text-sm leading-relaxed text-[#6b7c84] mb-5">Conception, modélisation et requêtage de
+                        bases de données relationnelles.</p>
+                    <div class="flex gap-4 mb-5">
+                        <div class="flex items-center gap-1.5 text-xs text-[#6b7c84]">
+                            <svg class="text-green" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>3 mois
+                        </div>
+                        <div class="flex items-center gap-1.5 text-xs text-[#6b7c84]">
+                            <svg class="text-green" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                            </svg>28 places
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center pt-4 border-t border-[#d4ecea]">
+                        <span class="text-xs font-semibold text-[#e07b00]">⚡ 2 places restantes</span>
+                        <button
+                            class="btn-inscrire flex items-center gap-1.5 px-5 py-2 bg-green text-white rounded-lg text-[13px] font-semibold">
+                            S'inscrire
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="formation-card bg-white rounded-2xl border-[1.5px] border-[#d4ecea] overflow-hidden cursor-pointer animate-fade-up-2"
+                data-cat="Management">
+                <div class="h-2" style="background: linear-gradient(90deg,#3dbdad,#2A9D8F)"></div>
+                <div class="p-6">
+                    <span
+                        class="inline-block px-3 py-1 rounded-full bg-green-pale text-green-dark text-[11px] font-semibold tracking-wide mb-4">Management</span>
+                    <h3 class="font-playfair text-xl font-bold text-[#0f2027] mb-2 leading-snug">Entrepreneuriat &
+                        Startup</h3>
+                    <p class="text-sm leading-relaxed text-[#6b7c84] mb-5">De l'idée au business model : créez et
+                        développez votre projet entrepreneurial.</p>
+                    <div class="flex gap-4 mb-5">
+                        <div class="flex items-center gap-1.5 text-xs text-[#6b7c84]">
+                            <svg class="text-green" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>4 mois
+                        </div>
+                        <div class="flex items-center gap-1.5 text-xs text-[#6b7c84]">
+                            <svg class="text-green" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                            </svg>15 places
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center pt-4 border-t border-[#d4ecea]">
+                        <span class="text-xs font-semibold text-green-dark">✓ Places disponibles</span>
+                        <button
+                            class="btn-inscrire flex items-center gap-1.5 px-5 py-2 bg-green text-white rounded-lg text-[13px] font-semibold">
+                            S'inscrire
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -496,6 +715,7 @@
             });
         }
     </script>
+
 </body>
 
 </html>
