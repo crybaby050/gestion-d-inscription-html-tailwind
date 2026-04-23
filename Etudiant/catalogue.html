@@ -9,7 +9,44 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap"
         rel="stylesheet">
-
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        green: {
+                            DEFAULT: '#2A9D8F',
+                            dark: '#1f7a6e',
+                            light: '#3dbdad',
+                            pale: '#e8f6f5',
+                            ultra: '#f0faf9',
+                        }
+                    },
+                    fontFamily: {
+                        playfair: ['"Playfair Display"', 'serif'],
+                        dm: ['"DM Sans"', 'sans-serif'],
+                    },
+                    keyframes: {
+                        fadeUp: {
+                            '0%': { opacity: '0', transform: 'translateY(24px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        pulse2: {
+                            '0%,100%': { opacity: '1' },
+                            '50%': { opacity: '0.4' },
+                        }
+                    },
+                    animation: {
+                        'fade-up': 'fadeUp 0.8s ease both',
+                        'fade-up-1': 'fadeUp 0.8s ease 0.1s both',
+                        'fade-up-2': 'fadeUp 0.8s ease 0.2s both',
+                        'fade-up-3': 'fadeUp 0.8s ease 0.3s both',
+                        'pulse2': 'pulse2 2s infinite',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
         body {
             font-family: 'DM Sans', sans-serif;
@@ -437,6 +474,28 @@
         <p class="text-sm">© 2026 École 221. Tous droits réservés.</p>
     </footer>
 
+    <script>
+        function setFilter(el, cat) {
+            // reset all chips
+            document.querySelectorAll('.filter-chip').forEach(c => {
+                c.classList.remove('border-green', 'bg-green-pale', 'text-green', 'font-semibold', 'active-chip');
+                c.classList.add('border-[#d4ecea]', 'bg-white', 'text-[#6b7c84]', 'font-medium');
+            });
+            // activate clicked
+            el.classList.add('border-green', 'bg-green-pale', 'text-green', 'font-semibold', 'active-chip');
+            el.classList.remove('border-[#d4ecea]', 'bg-white', 'text-[#6b7c84]', 'font-medium');
+
+            // filter cards
+            document.querySelectorAll('.formation-card').forEach(card => {
+                const cardCat = card.getAttribute('data-cat');
+                if (cat === 'Toutes' || cardCat === cat) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
