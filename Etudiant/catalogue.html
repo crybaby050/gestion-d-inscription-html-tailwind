@@ -212,6 +212,80 @@
         </div>
     </nav>
 
+    <!-- ===== HERO ===== -->
+    <section class="relative min-h-screen flex items-center px-12 pt-[120px] pb-20 overflow-hidden">
+        <!-- bg gradient -->
+        <div class="absolute inset-0 pointer-events-none"
+            style="background: radial-gradient(ellipse 60% 60% at 70% 40%, rgba(42,157,143,0.10) 0%, transparent 70%), radial-gradient(ellipse 40% 40% at 20% 80%, rgba(42,157,143,0.07) 0%, transparent 60%);">
+        </div>
+
+        <!-- decorative circles -->
+        <div class="hero-circle-outer"></div>
+        <div class="hero-circle-inner"></div>
+
+        <!-- dot grid -->
+        <div class="dot-grid absolute opacity-30 pointer-events-none"
+            style="right:200px; top:140px; width:180px; height:180px;"></div>
+
+        <!-- Content -->
+        <div class="relative max-w-xl animate-fade-up">
+
+            <!-- Badge -->
+            <div
+                class="inline-flex items-center gap-2 px-4 py-1.5 bg-green-pale border border-[#d4ecea] rounded-full text-xs font-semibold text-green-dark mb-6 tracking-wide">
+                <div class="w-1.5 h-1.5 rounded-full bg-green animate-pulse2"></div>
+                Inscriptions ouvertes · Session 2025–2026
+            </div>
+
+            <!-- Heading -->
+            <h1 class="font-playfair text-6xl font-black leading-[1.1] mb-5">
+                Trouvez la formation<br>
+                qui vous <span class="accent-underline">correspond</span>
+            </h1>
+
+            <!-- Sub -->
+            <p class="text-lg leading-relaxed text-[#6b7c84] mb-9 max-w-md">
+                Parcourez notre catalogue de formations et déposez votre demande d'inscription en quelques clics.
+                L'École 221 vous accompagne dans votre parcours académique.
+            </p>
+
+            <!-- Actions -->
+            <div class="flex gap-4 items-center">
+                <a href="#catalogue"
+                    class="btn-hero-main flex items-center gap-2 px-8 py-4 bg-green text-white rounded-xl text-[15px] font-semibold no-underline">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <rect x="3" y="3" width="7" height="7" />
+                        <rect x="14" y="3" width="7" height="7" />
+                        <rect x="3" y="14" width="7" height="7" />
+                        <rect x="14" y="14" width="7" height="7" />
+                    </svg>
+                    Explorer le catalogue
+                </a>
+                <a href="#"
+                    class="btn-ghost px-7 py-4 rounded-xl border-[1.5px] border-[#d4ecea] text-[#0f2027] text-[15px] font-medium no-underline">
+                    Mon espace →
+                </a>
+            </div>
+
+            <!-- Stats -->
+            <div class="flex gap-10 mt-14 pt-10 border-t border-[#d4ecea]">
+                <div>
+                    <div class="font-playfair text-4xl font-bold text-green">12</div>
+                    <div class="text-sm text-[#6b7c84] mt-0.5">Formations disponibles</div>
+                </div>
+                <div>
+                    <div class="font-playfair text-4xl font-bold text-green">340</div>
+                    <div class="text-sm text-[#6b7c84] mt-0.5">Étudiants inscrits</div>
+                </div>
+                <div>
+                    <div class="font-playfair text-4xl font-bold text-green">98%</div>
+                    <div class="text-sm text-[#6b7c84] mt-0.5">Taux de satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </body>
 
 </html>
